@@ -1,0 +1,13 @@
+[versions]
+
+# compile time processing
+lombok = "1.18.34"
+
+[libraries]
+
+# compile time processing
+lombok = { group = "org.projectlombok", name = "lombok", version.ref = "lombok" }
+
+[bundles]
+
+[plugins]
