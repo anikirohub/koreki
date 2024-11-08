@@ -39,7 +39,7 @@ jobs:
         run: mkdir output
 
       - name: Move API
-        run: mv build/libs/socialismus-common-api-${{ env.VERSION }}.jar output/${{ env.NAME }}-API-${{ env.VERSION }}.jar
+        run: mv build/libs/koreki-${{ env.VERSION }}.jar output/${{ env.NAME }}-API-${{ env.VERSION }}.jar
 
       - name: Archive artifacts
         uses: actions/upload-artifact@v4
