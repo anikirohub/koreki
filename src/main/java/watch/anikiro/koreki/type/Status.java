@@ -1,6 +1,6 @@
 package watch.anikiro.koreki.type;
 
-public enum StatusType {
+public enum Status {
     NONE,
     WATCHING,
     COMPLETED,
