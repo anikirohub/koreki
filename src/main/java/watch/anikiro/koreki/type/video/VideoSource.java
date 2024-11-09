@@ -1,4 +1,4 @@
-package watch.anikiro.koreki.type;
+package watch.anikiro.koreki.type.video;
 
 public enum VideoSource {
     ANIKIRO,
