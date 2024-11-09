@@ -11,7 +11,7 @@ public enum VideoResolution {
     P360("360p"),
     P480("480p"),
     P720("HD"),
-    P1080("FULL HD"),
+    P1080("FHD"),
     P1440("2K"),
     P2160("4K");
 
