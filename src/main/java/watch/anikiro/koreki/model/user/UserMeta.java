@@ -2,6 +2,7 @@ package watch.anikiro.koreki.model.user;
 
 import lombok.Data;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -12,7 +13,7 @@ public class UserMeta {
     private LocalDateTime lastSeen;
 
     private String ipAddress;
-    private String birthday;
+    private LocalDate birthday;
 
     private UUID avatarHash;
     private UUID bannerHash;
