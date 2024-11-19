@@ -10,7 +10,6 @@ import java.util.Set;
 @Data
 public class TitleInformation {
     private Set<Genre> genres;
-    private Publisher publisher;
-
+    private Set<Publisher> publishers;
     private List<Title> relations;
 }
