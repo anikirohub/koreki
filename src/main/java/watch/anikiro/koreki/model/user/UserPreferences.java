@@ -9,7 +9,7 @@ import java.util.Locale;
 
 @Data
 public class UserPreferences {
-    private final Long id;
+    private Long id;
     private boolean skipOpenings;
     private boolean skipEndings;
     private boolean autoPlay;

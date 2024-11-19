@@ -8,8 +8,8 @@ import java.util.List;
 
 @Data
 public class Ticket {
-    private final Long id;
-    private final Long userId;
+    private Long id;
+    private Long userId;
 
     private TicketStatus status;
     private List<TicketMessage> messages;

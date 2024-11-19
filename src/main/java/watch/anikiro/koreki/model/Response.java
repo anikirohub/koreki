@@ -8,6 +8,6 @@ import lombok.ToString;
 @ToString
 @AllArgsConstructor
 public class Response<T> {
-    private final T data;
     private final String message;
+    private final T data;
 }

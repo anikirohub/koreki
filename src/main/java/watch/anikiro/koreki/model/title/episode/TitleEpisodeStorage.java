@@ -5,7 +5,7 @@ import watch.anikiro.koreki.type.video.VideoSource;
 
 @Data
 public class TitleEpisodeStorage {
-    private final Long id;
+    private Long id;
 
     private VideoSource source;
     private String context;

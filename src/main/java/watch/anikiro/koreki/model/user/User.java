@@ -7,7 +7,7 @@ import java.util.Set;
 
 @Data
 public class User {
-    private final Long id;
+    private Long id;
     private String username;
     private String email;
     private boolean subscription;

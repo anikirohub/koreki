@@ -6,8 +6,8 @@ import java.time.LocalDateTime;
 
 @Data
 public class TicketMessage {
-    private final Long id;
-    private final Long userId;
+    private Long id;
+    private Long userId;
 
     private String content;
     private LocalDateTime timestamp;

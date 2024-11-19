@@ -9,8 +9,8 @@ import java.util.Map;
 
 @Data
 public class TitleEpisode {
-    private final Long id;
-    private final Long titleId;
+    private Long id;
+    private Long titleId;
 
     private int episode;
 

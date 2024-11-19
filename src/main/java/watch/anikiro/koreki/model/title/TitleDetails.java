@@ -7,8 +7,8 @@ import java.util.Locale;
 
 @Data
 public class TitleDetails {
-    private final Long id;
-    private final Locale language;
+    private Long id;
+    private Locale language;
 
     private String name;
     private List<String> aliases;

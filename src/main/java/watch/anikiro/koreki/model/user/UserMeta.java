@@ -8,8 +8,8 @@ import java.util.UUID;
 
 @Data
 public class UserMeta {
-    private final Long id;
-    private final LocalDateTime joinedAt;
+    private Long id;
+    private LocalDateTime joinedAt;
     private LocalDateTime lastSeen;
 
     private String ipAddress;

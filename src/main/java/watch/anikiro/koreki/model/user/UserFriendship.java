@@ -7,9 +7,9 @@ import java.time.LocalDateTime;
 
 @Data
 public class UserFriendship {
-    private final Long id;
-    private final Long requesterId;
-    private final Long receiverId;
+    private Long id;
+    private Long requesterId;
+    private Long receiverId;
 
     private FriendshipStatus status;
     private LocalDateTime createdAt;

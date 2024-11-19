@@ -11,7 +11,7 @@ import java.util.UUID;
 
 @Data
 public class Title {
-    private final Long id;
+    private Long id;
 
     private int maxEpisodes;
     private boolean hidden;
