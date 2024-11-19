@@ -22,6 +22,8 @@ public class Title {
     private TitleStatus status;
     private TitleType type;
     private TitleRating rating;
+    private TitleSeason season;
+    private String country;
 
     private Map<Locale, TitleDetails> details;
 
