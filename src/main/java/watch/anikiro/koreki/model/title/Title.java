@@ -23,7 +23,7 @@ public class Title {
     private TitleType type;
     private TitleRating rating;
     private TitleSeason season;
-    private String country;
+    private Locale country;
 
     private Map<Locale, TitleDetails> details;
 
