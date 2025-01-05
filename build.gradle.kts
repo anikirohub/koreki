@@ -48,9 +48,18 @@ publishing {
     publications {
         create<MavenPublication>("mavenJava") {
             from(components["java"])
-
             artifact(tasks["javadocJar"])
             artifact(tasks["sourcesJar"])
+        }
+    }
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/anikirohub/koreki")
+            credentials {
+                username = System.getenv("GITHUB_ACTOR") ?: ""
+                password = System.getenv("GITHUB_TOKEN") ?: ""
+            }
         }
     }
 }
