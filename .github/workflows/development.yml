@@ -52,16 +52,16 @@ jobs:
           server-password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build project
-        run: ./gradlew build -x test
+        run: ./gradlew build sourcesJar javadocJar -x test
 
-      - name: Move artifact
+      - name: Create output directory
         run: mkdir -p output
 
       - name: Move artifacts
         run: |
           mv build/libs/koreki-${{ env.VERSION }}.jar          output/${{ env.APPLICATION_NAME }}-${{ env.VERSION }}.jar
-          mv build/libs/koreki-${{ env.VERSION }}-sources.jar  output/${{ env.APPLICATION_NAME }}-${{ env.VERSION }}-sources.jar
           mv build/libs/koreki-${{ env.VERSION }}-javadoc.jar  output/${{ env.APPLICATION_NAME }}-${{ env.VERSION }}-javadoc.jar
+          mv build/libs/koreki-${{ env.VERSION }}-sources.jar  output/${{ env.APPLICATION_NAME }}-${{ env.VERSION }}-sources.jar
 
       - name: Archive artifacts
         uses: actions/upload-artifact@v4
