@@ -50,6 +50,10 @@ publishing {
             from(components["java"])
             artifact(tasks["javadocJar"])
             artifact(tasks["sourcesJar"])
+
+            pom {
+                name.set("koreki")
+            }
         }
     }
     repositories {

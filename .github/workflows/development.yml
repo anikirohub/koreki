@@ -51,8 +51,10 @@ jobs:
           server-username: GITHUB_ACTOR
           server-password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build project
-        run: ./gradlew build sourcesJar javadocJar -x test
+      - name: Build project and publish
+        run: ./gradlew build publish -x test
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create output directory
         run: mkdir -p output
@@ -68,8 +70,3 @@ jobs:
         with:
           name: Build artifacts
           path: output/
-
-      - name: Publish to GitHub Packages
-        run: ./gradlew publish
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
