@@ -1,13 +1,15 @@
 package watch.anikiro.koreki.model;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.ToString;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Getter
-@ToString
+@Data
+@Builder
+@NoArgsConstructor
 @AllArgsConstructor
 public class Response<T> {
-    private final String message;
-    private final T response;
+    private String message;
+    private T response;
 }
