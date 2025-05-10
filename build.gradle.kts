@@ -7,8 +7,8 @@ group = "watch.anikiro"
 version = (System.getenv("VERSION") ?: "dev")
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_21
-    targetCompatibility = JavaVersion.VERSION_21
+    sourceCompatibility = JavaVersion.VERSION_23
+    targetCompatibility = JavaVersion.VERSION_23
 }
 
 repositories {
@@ -21,49 +21,22 @@ dependencies {
     "annotationProcessor"(rootProject.libs.lombok)
 }
 
-tasks {
-    register("generateJavadocs", Javadoc::class) {
-        source = sourceSets["main"].allJava
-        classpath = configurations["compileClasspath"]
-        setDestinationDir(file(layout.buildDirectory.dir("generated/javadoc")))
-
-        options {
-            title = "Koreki"
-            windowTitle = "Koreki"
-        }
-    }
-
-    register("javadocJar", Jar::class) {
-        archiveClassifier.set("javadoc")
-        from(getTasksByName("generateJavadocs", false))
-    }
-
-    register("sourcesJar", Jar::class) {
-        archiveClassifier.set("sources")
-        from(sourceSets["main"].allSource)
+tasks.withType<Javadoc> {
+    (options as StandardJavadocDocletOptions).apply {
+        addStringOption("Xdoclint:none", "-quiet")
+        title = "Koreki Library"
+        windowTitle = "Koreki Library"
     }
 }
 
 publishing {
     publications {
         create<MavenPublication>("mavenJava") {
-            from(components["java"])
-            artifact(tasks["javadocJar"])
-            artifact(tasks["sourcesJar"])
+            groupId = group.toString()
+            artifactId = rootProject.name
+            version = rootProject.version.toString()
 
-            pom {
-                name.set("koreki")
-            }
-        }
-    }
-    repositories {
-        maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/anikirohub/koreki")
-            credentials {
-                username = System.getenv("GITHUB_ACTOR") ?: ""
-                password = System.getenv("GITHUB_TOKEN") ?: ""
-            }
+            from(components["java"])
         }
     }
 }

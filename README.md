@@ -7,56 +7,42 @@ library simplifies interactions with Anikiro gateways, applications, and other s
 
 ## Adding Koreki to Your Project
 
-To include Koreki in your project, you can use either Maven or Gradle. Below are the steps to configure your build
+To include Koreki in your project, use [JitPack](https://jitpack.io/). Below are the steps to configure your build
 system.
-
-Ensure you set the required credentials in your environment for both Maven and Gradle:
-
-- `GITHUB_ACTOR`: Your GitHub username.
-- `GITHUB_TOKEN`: A personal access token with `read:packages` scope.
 
 ### Using Maven
 
-Add the following to your `pom.xml`:
+Add the JitPack repository and Koreki dependency to your `pom.xml`:
 
 ```xml
 
 <repositories>
     <repository>
-        <id>github-koreki</id>
-        <url>https://maven.pkg.github.com/anikirohub/koreki</url>
-        <snapshots>
-            <enabled>true</enabled>
-        </snapshots>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
     </repository>
 </repositories>
 
 <dependencies>
-<dependency>
-    <groupId>com.anikiro</groupId>
-    <artifactId>koreki</artifactId>
-    <version>VERSION</version>
-</dependency>
+  <dependency>
+      <groupId>com.github.anikirohub</groupId>
+      <artifactId>koreki</artifactId>
+      <version>VERSION</version>
+  </dependency>
 </dependencies>
 ```
 
 ### Using Gradle
 
-Add the following to your `build.gradle` or `build.gradle.kts`:
+Add the JitPack repository and Koreki dependency to your build.gradle or build.gradle.kts:
 
 ```kotlin
 repositories {
-    maven {
-        url = uri("https://maven.pkg.github.com/anikirohub/koreki")
-        credentials {
-            username = System.getenv("GITHUB_ACTOR")
-            password = System.getenv("GITHUB_TOKEN")
-        }
-    }
+  maven { url = uri("https://jitpack.io") }
 }
 
 dependencies {
-    implementation("com.anikiro:koreki:VERSION")
+  implementation("com.github.anikirohub:koreki:VERSION")
 }
 ```
 
@@ -73,14 +59,13 @@ When specifying a version, use the desired release or dev build tag:
 
 - For a release:
   ```
-  implementation("com.anikiro:koreki:0.0.1")
+  implementation("com.github.anikirohub:koreki:0.0.1")
   ```
 - For a dev build:
   ```
-  implementation("com.anikiro:koreki:dev-6e29dac")
+  implementation("com.github.anikirohub:koreki:dev-6e29dac")
   ```
 
 ---
 
-For questions or issues, feel free to create an issue on
-the [Koreki GitHub repository](https://github.com/anikirohub/koreki).
+For any questions or support, please join our [Discord server](https://discord.anikiro.watch).
