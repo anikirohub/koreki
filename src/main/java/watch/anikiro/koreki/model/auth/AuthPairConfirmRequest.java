@@ -5,5 +5,6 @@ import lombok.Data;
 @Data
 public class AuthPairConfirmRequest {
 	private String code;
-	private String accessToken;
+	private String username;
+	private String password;
 }
