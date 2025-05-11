@@ -1,4 +1,4 @@
-package watch.anikiro.koreki.model.auth;
+package watch.anikiro.koreki.model.auth.pair;
 
 import lombok.Data;
 
