@@ -18,6 +18,7 @@ public class RegisterRequest {
 
 	private String firstname;
 	private String surname;
+	private boolean remember;
 
 	private Preferences preferences;
 
